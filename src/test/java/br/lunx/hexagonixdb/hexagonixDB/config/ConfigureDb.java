@@ -1,6 +1,5 @@
 package br.lunx.hexagonixdb.hexagonixDB.config;
 
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Replace;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.context.annotation.Bean;
