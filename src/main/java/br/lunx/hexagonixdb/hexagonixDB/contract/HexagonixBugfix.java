@@ -4,9 +4,12 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.time.Instant;
 import java.util.Set;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -16,8 +19,12 @@ import java.util.Set;
 public class HexagonixBugfix {
 
     @Id
-    @Column(name = "fix_id")
+    @Column(name = "id")
     private String id;
+
+    @Column(name = "aux_id")
+    @JdbcTypeCode(SqlTypes.CHAR)
+    private UUID auxId;
 
     @Column(name = "description")
     private String description;

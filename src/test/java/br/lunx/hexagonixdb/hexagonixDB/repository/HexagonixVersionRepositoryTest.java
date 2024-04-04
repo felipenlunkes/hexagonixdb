@@ -9,6 +9,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.time.Instant;
 import java.util.Collections;
+import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -27,6 +28,7 @@ public class HexagonixVersionRepositoryTest {
 
         var bugFixEntity = new HexagonixBugfix();
         bugFixEntity.setId("040420230315");
+        bugFixEntity.setAuxId(UUID.randomUUID());
         bugFixEntity.setDescription("Memory leak");
         bugFixEntity.setResolution("VM correction");
         bugFixEntity.setCommitted(false);
@@ -36,6 +38,7 @@ public class HexagonixVersionRepositoryTest {
 
         var entity = new HexagonixVersion();
         entity.setId("HexagonixSystemI-040420240313");
+        entity.setAuxId(UUID.randomUUID());
         entity.setCodename("Raava");
         entity.setDescription("Next RC version");
         entity.setReleaseChannel("CURRENT");
@@ -47,6 +50,7 @@ public class HexagonixVersionRepositoryTest {
         var savedVersion = hexagonixVersionRepository.save(entity);
 
         assertThat(savedVersion.getId()).isEqualTo(entity.getId());
+        assertThat(savedVersion.getAuxId()).isEqualTo(entity.getAuxId());
         assertThat(savedVersion.getCommitted()).isEqualTo(entity.getCommitted());
         assertThat(savedVersion.getDescription()).isEqualTo(entity.getDescription());
         assertThat(savedVersion.getReleaseDate()).isEqualTo(entity.getReleaseDate());
