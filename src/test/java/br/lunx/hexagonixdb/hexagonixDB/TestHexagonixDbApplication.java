@@ -10,12 +10,6 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration(proxyBeanMethods = false)
 public class TestHexagonixDbApplication {
 
-	@Bean
-	@ServiceConnection
-	MySQLContainer<?> mysqlContainer() {
-		return new MySQLContainer<>(DockerImageName.parse("mysql:latest"));
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.from(HexagonixDbApplication::main).with(TestHexagonixDbApplication.class).run(args);
 	}
