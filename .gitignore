@@ -9,8 +9,13 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+
+# IntelliJ and other directories
+
 .gradle/
 .idea/
+build/
+
 # Package Files #
 *.jar
 *.war
