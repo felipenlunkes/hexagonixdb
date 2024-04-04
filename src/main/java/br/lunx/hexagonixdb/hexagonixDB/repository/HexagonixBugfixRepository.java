@@ -1,4 +1,12 @@
 package br.lunx.hexagonixdb.hexagonixDB.repository;
 
-public interface HexagonixBugfixRepository {
+import br.lunx.hexagonixdb.hexagonixDB.contract.HexagonixBugfix;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.Repository;
+
+public interface HexagonixBugfixRepository extends
+        Repository<HexagonixBugfix, String>,
+        PagingAndSortingRepository<HexagonixBugfix, String>,
+        JpaSpecificationExecutor<HexagonixBugfix> {
 }
